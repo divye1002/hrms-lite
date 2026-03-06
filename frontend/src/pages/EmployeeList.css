@@ -1,0 +1,52 @@
+.employee-page {
+    animation: page-fade-in 0.4s ease-out;
+}
+
+/* ── Form Card ───────────────────────────────── */
+
+.form-card {
+    margin-bottom: 1.5rem;
+    animation: slide-down 0.3s ease-out;
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.employee-form {
+    padding: 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* ── Confirm Delete ──────────────────────────── */
+
+.confirm-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* ── Text Helpers ────────────────────────────── */
+
+.text-email {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}

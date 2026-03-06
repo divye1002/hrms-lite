@@ -1,0 +1,106 @@
+.dashboard-page {
+    animation: page-fade-in 0.4s ease-out;
+}
+
+/* ── Summary Cards ──────────────────────────── */
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--surface-card);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 2rem;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: var(--surface-hover);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.card-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+.card-total .card-icon {
+    background: rgba(99, 102, 241, 0.12);
+}
+
+.card-present .card-icon {
+    background: rgba(16, 185, 129, 0.12);
+}
+
+.card-absent .card-icon {
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.card-unmarked .card-icon {
+    background: rgba(245, 158, 11, 0.12);
+}
+
+/* ── Progress Bar ────────────────────────────── */
+
+.progress-bar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--surface-hover);
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 60px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 3px;
+    transition: width 0.6s ease;
+}
+
+.progress-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    min-width: 36px;
+}
