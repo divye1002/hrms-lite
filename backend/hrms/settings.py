@@ -22,6 +22,11 @@ DEBUG = os.getenv("DEBUG", "True").lower() in ("true", "1", "yes")
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
+# Render sets this automatically — add it so Django accepts requests
+RENDER_EXTERNAL_HOSTNAME = os.getenv("RENDER_EXTERNAL_HOSTNAME")
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 # ── Apps ──────────────────────────────────────
 
@@ -134,7 +139,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = os.getenv(
     "CORS_ALLOWED_ORIGINS",
-    "https://hrms-lite-eight-nu.vercel.app",
+    "http://localhost:5173,http://127.0.0.1:5173,https://hrms-lite-eight-nu.vercel.app",
 ).split(",")
 
 CORS_ALLOW_ALL_ORIGINS = DEBUG
